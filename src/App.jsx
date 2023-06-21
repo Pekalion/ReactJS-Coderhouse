@@ -1,11 +1,13 @@
-import Navbar from "./Navbar";
+import Navbar from "./components/layout/Navbar";
+// import CartWidget from "./components/common/CartWidget";
+import ItemListContainer from './components/common/ItemListContainer';
 
-function App() {
+const App = () => {
   return (
-    <div>
+    <>
       <Navbar />
-      <h1>Hola</h1>;
-    </div>
+      <ItemListContainer greeting="Bienvenidos a Cerol House" />
+    </>
   );
 }
 
