@@ -4,7 +4,7 @@ export let products = [
         title: "Adhesivo cementico manga Rapiretak ladrillos x 30Kg",
         price: 4.691,
         stock: 4,
-        description: "Adhesivo para manga Rapiretak es un adhesivo cementicio en polvo compuesto especialmente para la ejecución de mamposterías de ladrillos de HCCA. Si a la practicidad del HCCA le sumamos el uso del adhesivo para manga, las ventajas se multiplican. De fácil preparación, el uso del adhesivo para manga ayuda a reducir los tiempos de ejecución a la mitad, promediando 12 min x m². Hay un control total en la adhesión de las juntas 100% estandarizado. Su presentación es en bolsa de 30kg.",
+        description: "Adhesivo para manga Rapiretak es un adhesivo cementicio en polvo compuesto especialmente para la ejecución de mamposterías de ladrillos de HCCA.",
         category: "construccion",
         img: "https://res.cloudinary.com/dhme3fmky/image/upload/v1689677332/Proyecto%20React%20CoderHouse/xgfza96yxwzkm6qu9kcu.jpg",
     },

@@ -1,33 +1,30 @@
-import { AppBar, Toolbar, Typography, Button } from "@mui/material";
-import CartWidget from "../../common/CartWidget/CartWidget";
+import "./Navbar.css";
+import CartWidget from "../../common/cartWidget/CartWidget";
+import SubNavbar from "./subNav/SubNav";
 import { Link } from "react-router-dom";
-import "./Navbar.css"
-
+import LoginWidget from "../../common/loginWidget/LoginWidget";
 
 const Navbar = () => {
   return (
-    <>
-      <AppBar position="static">
-        <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            <Link to="/"><img className="logo" src="https://res.cloudinary.com/dhme3fmky/image/upload/v1689678297/Proyecto%20React%20CoderHouse/xhrevrgrcl0janonrzu1.png" alt="Logotipo de CEROL HOUSE" /></Link>
-          </Typography>
+    <section className="navbar-container">
+      <section className="navbar">
+        <div className="logo-container">
           <Link to="/">
-            <Button color="inherit">Inicio</Button>
+            <img
+              className="logo"
+              src="https://res.cloudinary.com/dhme3fmky/image/upload/v1689678297/Proyecto%20React%20CoderHouse/xhrevrgrcl0janonrzu1.png"
+              alt="Logotipo de CEROL HOUSE"
+            />
           </Link>
-          <Link to="/category/construccion">
-            <Button color="inherit">Construcción</Button>
-          </Link>
-          <Link to="/category/instalaciones_sanitarias">
-            <Button color="inherit">Instalaciones sanitarias</Button>
-          </Link>
-          <Link to="/category/pinturas_y_decoracion">
-            <Button color="inherit">Pinturas y decoración</Button>
-          </Link>
+        </div>
+        <div className="icons-container">
+          <LoginWidget />
+
           <CartWidget />
-        </Toolbar>
-      </AppBar>
-    </>
+        </div>
+      </section>
+      <SubNavbar />
+    </section>
   );
 };
 

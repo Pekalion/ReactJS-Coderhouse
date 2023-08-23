@@ -1,4 +1,26 @@
-.logo {
-    width: fit-content;
-    height: 13vh;
+.navbar-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #c6be2d;
+    padding: 10px;
+}
+
+.navbar img {
+    height: 150px;
+}
+
+.navbar .icons-container {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .icon {
+    margin-right: 15px;
+    cursor: pointer;
 }

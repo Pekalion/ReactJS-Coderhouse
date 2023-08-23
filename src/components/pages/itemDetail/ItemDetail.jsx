@@ -1,34 +1,36 @@
-import { useEffect, useState } from "react";
+import { Card, CardContent, Typography} from "@mui/material";
 import CounterContainer from "../../common/counter/CounterContainer";
-import { products } from "../../../productsMock";
-import { useParams } from "react-router-dom";
 
-const ItemDetail = () => {
-  const [producto, setProducto] = useState({});
-
-  const {id} = useParams()
-
-
-  useEffect(() => {
-    let productoSeleccionado = products.find((products) => products.id === +id);
-    const tarea = new Promise((resolve, reject) => {
-      resolve(productoSeleccionado);
-    });
-    tarea.then((res) => setProducto(res));
-  }, []);
-
-  const onAdd = (cantidad) => {
-    console.log(producto);
-    console.log(cantidad);
+const ItemDetail = ({ product, onAdd }) => {
+  const containerStyle = {
+    display: "flex",
+    alignItems: "center",
+    marginBottom: "20px",
   };
 
-  return (
-    <div>
-      <h2>{producto.title}</h2>
-      <h4>{producto.price}</h4>
 
-      <CounterContainer stock={producto.stock} onAdd={onAdd} />
-    </div>
+  return (
+    <Card sx={containerStyle}>
+      <div>
+        <img src={product.img} alt={product.title} style={{ width: "75%", height: "auto" }} />
+      </div>
+      <div>
+        <CardContent>
+          <Typography variant="h4">{product.title}</Typography>
+          <Typography variant="body1">{product.description}</Typography>
+          <Typography variant="h6" sx={{ marginTop: 2 }}>
+            $ {product.price}
+          </Typography>
+          {product.stock > 0 ? (
+            <CounterContainer stock={product.stock} onAdd={onAdd} />
+          ) : (
+            <Typography variant="h6" color="error" sx={{ marginTop: 2 }}>
+              Lo sentimos, actualmente el ítem se encuentra sin stock.
+            </Typography>
+          )}
+        </CardContent>
+      </div>
+    </Card>
   );
 };
 

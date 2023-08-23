@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 
 const ProductCard = ({ item, isInItemList }) => {
   return (
-    <Card sx={{ width: 345 }}>
+    <Card sx={{ width: 345, marginBottom: 10, backgroundColor: "#f5f5f5" }}>
       <CardMedia
         component="img"
         alt="green iguana"
@@ -21,18 +21,15 @@ const ProductCard = ({ item, isInItemList }) => {
         <Typography gutterBottom variant="h5" component="div">
           {item.title}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
-          {item.description}
-        </Typography>
       </CardContent>
-      <CardActions>
-        <Link to={`/itemDetail/${item.id}`}>
-          {isInItemList ? (
+      <CardActions> 
+        {isInItemList ? (
+          <Link to={`/productos/${item.id}`}>
             <Button size="small">Ver detalles</Button>
-          ) : (
-            <Button size="small">Eliminar del carrito</Button>
-          )}
-        </Link>
+          </Link>
+        ) : ( 
+          <Button size="small">Eliminar del carrito</Button>
+        )}
       </CardActions>
     </Card>
   );
